@@ -42,5 +42,15 @@ namespace xdxdxdxdxddxdxd.Models
             }
             set { }
         }
+
+        protected void UpdatePixels(Color[,] newPixels)
+        {
+            if (newPixels.GetLength(0) != RowNum || newPixels.GetLength(1) != ColNum)
+            {
+                throw new ArgumentException("New pixel array dimensions must match the current dimensions.");
+            }
+
+            pixel = newPixels;
+        }
     }
 }
